@@ -6,7 +6,6 @@ from pathlib import Path
 from unittest.mock import MagicMock
 
 from build.utils import (
-    create_tag,
     get_context,
     get_image_reference,
     get_latest_wine_stable_version,
@@ -105,27 +104,6 @@ def test_get_image_reference_local_registry() -> None:
         get_image_reference("localhost:5000", "latest")
         == "localhost:5000/pfeiffermax/debian-wine:latest"
     )
-
-
-# --- create_tag ---
-
-
-def test_create_tag_prefixes_build() -> None:
-    """Verify that create_tag prepends 'build-' to the given version string.
-
-    :returns: None
-    :rtype: None
-    """
-    assert create_tag("9.0.0") == "build-9.0.0"
-
-
-def test_create_tag_arbitrary_id() -> None:
-    """Verify that create_tag works for an arbitrary version string.
-
-    :returns: None
-    :rtype: None
-    """
-    assert create_tag("10.1.2") == "build-10.1.2"
 
 
 # --- get_latest_wine_stable_version ---

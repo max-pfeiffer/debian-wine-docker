@@ -64,7 +64,7 @@ def tag_exists(build_id: str) -> bool:
     :return:
     """
     response = requests.get(
-        "https://hub.docker.com/v2/namespaces/pfeiffermax/repositories/windrose-dedicated-server/tags"
+        "https://hub.docker.com/v2/namespaces/pfeiffermax/repositories/debian-wine/tags"
     )
     response.raise_for_status()
     tags: dict = response.json()["results"]
@@ -73,12 +73,3 @@ def tag_exists(build_id: str) -> bool:
         return True
     else:
         return False
-
-
-def create_tag(build_id: str) -> str:
-    """Create the Docker image tag.
-
-    :param build_id:
-    :return:
-    """
-    return f"build-{build_id}"
