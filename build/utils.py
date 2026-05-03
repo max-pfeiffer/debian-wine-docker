@@ -57,10 +57,10 @@ def get_latest_wine_stable_version() -> str:
     return latest_version
 
 
-def tag_exists(build_id: str) -> bool:
-    """Pull tag data from Docker Hub and check if tag with this build_id already exists.
+def tag_exists(new_tag: str) -> bool:
+    """Pull tag data from Docker Hub and check if tag already exists.
 
-    :param build_id:
+    :param new_tag:
     :return:
     """
     response = requests.get(
@@ -68,7 +68,7 @@ def tag_exists(build_id: str) -> bool:
     )
     response.raise_for_status()
     tags: dict = response.json()["results"]
-    matching_tags: list[dict] = [tag for tag in tags if (build_id in tag["name"])]
+    matching_tags: list[dict] = [tag for tag in tags if (new_tag in tag["name"])]
     if matching_tags:
         return True
     else:

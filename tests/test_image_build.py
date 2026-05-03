@@ -2,7 +2,6 @@
 
 from build.publish import main
 from build.utils import (
-    create_tag,
     get_latest_wine_stable_version,
 )
 from click.testing import CliRunner, Result
@@ -59,8 +58,7 @@ def test_image_build(
 
     response_image_tags: list[str] = response.json()["tags"]
 
-    current_rust_server_build_id = get_latest_wine_stable_version()
-    tag = create_tag(current_rust_server_build_id)
+    tag = get_latest_wine_stable_version()
 
     assert tag in response_image_tags
     assert "latest" in response_image_tags
