@@ -6,7 +6,6 @@ import click
 from python_on_whales import Builder, DockerClient
 
 from build.utils import (
-    create_tag,
     get_context,
     get_image_reference,
     get_latest_wine_stable_version,
@@ -62,8 +61,7 @@ def main(
     else:
         click.echo("Building Wine Docker image...")
 
-        tag = create_tag(wine_version)
-        image_reference_version: str = get_image_reference(registry, tag)
+        image_reference_version: str = get_image_reference(registry, wine_version)
         image_reference_latest: str = get_image_reference(registry, "latest")
 
         docker_client: DockerClient = DockerClient()
