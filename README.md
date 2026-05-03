@@ -4,12 +4,14 @@
 [![Code Quality](https://github.com/max-pfeiffer/debian-wine-docker/actions/workflows/code-quality.yaml/badge.svg)](https://github.com/max-pfeiffer/debian-wine-docker/actions/workflows/code-quality.yaml)
 [![Test Image Build](https://github.com/max-pfeiffer/debian-wine-docker/actions/workflows/test-image-build.yaml/badge.svg)](https://github.com/max-pfeiffer/debian-wine-docker/actions/workflows/test-image-build.yaml)
 [![Publish Docker Image](https://github.com/max-pfeiffer/debian-wine-docker/actions/workflows/publish.yaml/badge.svg)](https://github.com/max-pfeiffer/debian-wine-docker/actions/workflows/publish.yaml)
+![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/pfeiffermax/debian-wine?sort=semver)
+![Docker Pulls](https://img.shields.io/docker/pulls/pfeiffermax/debian-wine)
 
 # Debian Wine Docker Image
 Slim Debian image with [Wine](https://www.winehq.org/) installed.
 
 New versions of that image will be build when a [new stable version of Wine was released](https://gitlab.winehq.org/wine/wine/-/releases).
-Image tags correspond to Wine versions.
+[Image tags](https://hub.docker.com/r/pfeiffermax/debian-wine/tags) correspond to Wine versions.
 
 **Docker Hub:** https://hub.docker.com/r/pfeiffermax/debian-wine
 
