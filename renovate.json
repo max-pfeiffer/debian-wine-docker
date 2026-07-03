@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "Europe/Zurich",
+  "schedule": ["* * * * 4"],
+  "semanticCommits": "enabled",
+  "enabledManagers": ["poetry"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["* * * * 4"]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "lockFileMaintenance"],
+      "automerge": true
+    }
+  ],
+  "automergeType": "branch",
+  "platformAutomerge": false,
+  "rebaseWhen": "behind-base-branch"
+}
