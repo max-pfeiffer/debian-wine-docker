@@ -1,6 +1,9 @@
 name: Test Image Build
 
 on:
+  push:
+    branches:
+      - "renovate/**"
   pull_request:
     paths:
       - .github/**
